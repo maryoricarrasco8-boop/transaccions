@@ -1,0 +1,57 @@
+{
+  "info": {
+    "name": "TransactionMS",
+    "_postman_id": "tx-collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Transaction",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": 1, \"type\": \"DEPOSIT\", \"amount\": 100.0, \"currency\": \"PEN\"}"
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/v1/transactions",
+          "host": [
+            "http://localhost:8081"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "transactions"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get By Id",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8081/api/v1/transactions/{{id}}"
+      }
+    },
+    {
+      "name": "List All",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8081/api/v1/transactions"
+      }
+    },
+    {
+      "name": "List By Account",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8081/api/v1/transactions?accountId=1"
+      }
+    }
+  ]
+}
